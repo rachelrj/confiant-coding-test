@@ -1,10 +1,47 @@
-# Getting Started with Create React App
+# Confiant Coding Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project should be ran locally alongside [the backend](https://github.com/rachelrj/confiant-coding-test-server-side).
+To run this single page react application with yarn installed globally, run:
+
+```
+yarn install
+
+yarn start
+```
+
+Tests can be ran with:
+
+``
+yarn test
+``
+These scripts also run the lint checks.
+
+## Directions
+
+1) Implement a single page React application and small server side application to process API requests from the client side 
+2) The end user should be able to click on one of 3 tabs: “JavaScript”, “CSS” or “HTML” 
+3) On click, the user should be able to see a search input and submit button to perform a code search 
+4) When submitting, the application should send an asynchronous request to the server side to search code on GitHub using this API:
+
+``
+curl \ 
+-H "Accept: application/vnd.github.v3+json" \ 
+https://api.github.com/search/code?q=[search]+in:file+language:[language]+repo:microsoft/vscode 
+``
+
+The endpoint is documented [here](https://docs.github.com/en/free-pro-team@latest/rest/reference/search#search-code)
+
+The server side application should cache results from GitHub to prevent the client from hitting the endpoint’s rate limit. The searches should not be cached using SQLite3. 
+A history of searches should be stored in an SQLite3 table called “searches” containing an ID, the client IP, the search and the search date and time
+
+5) Render the results in a table. The results should include the “name”, “path” and a link to “html_url”. 
+6) The final project should include a Readme explaining how to setup and run the application 
+7) Please share the project as a private GitHub repository with gabfl-confiant or email it to gab@confiant.com
 
 ## Available Scripts
 
-In the project directory, you can run:
+Before running the project, remember to run an npm install.
+In the project directory, you can run the following commands:
 
 ### `yarn start`
 
@@ -16,8 +53,8 @@ You will also see any lint errors in the console.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches Jest to run ui tests. Tests use react-testing-library and react-test-renderer.
+There are more traditional unit tests first & additionally Snapshot tests.
 
 ### `yarn build`
 
@@ -27,44 +64,18 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `yarn lint`
 
-### `yarn eject`
+Runs the eslint. Uses Google style presets.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Todos
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Break apart App.js into smaller functional components.
+* Make api host configurable.
+* Improve error handling.
+* Improve display for table. Wrap text.
+* Make display responsive instead of static width.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Notes
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
