@@ -18,9 +18,7 @@ const SearchBar = (props) => {
     event.preventDefault();
     if (!fieldInfo.error) {
       const response = await search(fieldInfo.fieldValue, language);
-      if (response && response.data && response.data.items) {
-        props.showResults(response.data.items);
-      }
+      props.showResults(response);
     }
   }
 

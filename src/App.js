@@ -26,15 +26,24 @@ function App() {
     });
   };
   const showResults = (requestResults) => {
-    if (requestResults && requestResults.length > 0) {
-      setSearchDetails({
-        results: requestResults,
-        value: searchDetails.value,
-      });
+    if (requestResults.data && requestResults.data.items) {
+      if (requestResults.data.items.length > 0) {
+        setSearchDetails({
+          results: requestResults.data.items,
+          value: searchDetails.value,
+        });
+      } else {
+        setSearchDetails({
+          results: {
+            'error': 'No results to show.',
+          },
+          value: searchDetails.value,
+        });
+      }
     } else {
       setSearchDetails({
         results: {
-          'error': 'There was an error encountered. No results to show.',
+          'error': 'There was an error encountered.',
         },
         value: searchDetails.value,
       });
