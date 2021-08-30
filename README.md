@@ -73,6 +73,8 @@ Runs the eslint. Uses Google style presets.
 * Break apart App.js into smaller functional components.
 * Make api host configurable.
 * Improve error handling.
+* Fix bug where no results for multiple words
+    * Ex: 'globalThis' returns results but '(function (globalThis, factory) {' does not
 * Improve display for table. Wrap text.
 * Make display responsive instead of static width.
 
