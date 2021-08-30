@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders CSS tab on click 1`] = `
-<div
-  className="App"
->
+Array [
   <header
     className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
   >
@@ -131,13 +129,13 @@ exports[`Renders CSS tab on click 1`] = `
         />
       </div>
     </div>
-  </header>
+  </header>,
   <div
     aria-labelledby="simple-tab-0"
     hidden={true}
     id="simple-tabpanel-0"
     role="tabpanel"
-  />
+  />,
   <div
     aria-labelledby="simple-tab-1"
     hidden={false}
@@ -226,20 +224,18 @@ exports[`Renders CSS tab on click 1`] = `
         </button>
       </form>
     </div>
-  </div>
+  </div>,
   <div
     aria-labelledby="simple-tab-2"
     hidden={true}
     id="simple-tabpanel-2"
     role="tabpanel"
-  />
-</div>
+  />,
+]
 `;
 
 exports[`Renders HTML tab on click 1`] = `
-<div
-  className="App"
->
+Array [
   <header
     className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
   >
@@ -367,19 +363,19 @@ exports[`Renders HTML tab on click 1`] = `
         />
       </div>
     </div>
-  </header>
+  </header>,
   <div
     aria-labelledby="simple-tab-0"
     hidden={true}
     id="simple-tabpanel-0"
     role="tabpanel"
-  />
+  />,
   <div
     aria-labelledby="simple-tab-1"
     hidden={true}
     id="simple-tabpanel-1"
     role="tabpanel"
-  />
+  />,
   <div
     aria-labelledby="simple-tab-2"
     hidden={false}
@@ -468,14 +464,12 @@ exports[`Renders HTML tab on click 1`] = `
         </button>
       </form>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`Renders Javascript tab on initial load 1`] = `
-<div
-  className="App"
->
+Array [
   <header
     className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
   >
@@ -589,7 +583,7 @@ exports[`Renders Javascript tab on initial load 1`] = `
         </div>
       </div>
     </div>
-  </header>
+  </header>,
   <div
     aria-labelledby="simple-tab-0"
     hidden={false}
@@ -675,18 +669,18 @@ exports[`Renders Javascript tab on initial load 1`] = `
         </button>
       </form>
     </div>
-  </div>
+  </div>,
   <div
     aria-labelledby="simple-tab-1"
     hidden={true}
     id="simple-tabpanel-1"
     role="tabpanel"
-  />
+  />,
   <div
     aria-labelledby="simple-tab-2"
     hidden={true}
     id="simple-tabpanel-2"
     role="tabpanel"
-  />
-</div>
+  />,
+]
 `;
