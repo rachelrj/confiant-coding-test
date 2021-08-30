@@ -48,9 +48,6 @@ function SearchTabs() {
     }
   };
 
-  const resultsFound = searchDetails.results &&
-    searchDetails.results.length > 0;
-
   return (
     <>
       <AppBar position="static">
@@ -76,12 +73,7 @@ function SearchTabs() {
           <SearchBar value={searchDetails.value} showResults={showResults}/>
         </TabPanel>,
       )}
-      {
-        resultsFound && <ResultTable results={searchDetails.results}/>
-      }
-      {
-        !resultsFound && searchDetails.results.error
-      }
+      <ResultTable results={searchDetails.results}/>
     </>
   );
 }
